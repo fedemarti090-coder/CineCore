@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CineCore / Player</title>
+
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+    <div id="video-container">
+        <a class="back-home" href="../home/index.html" aria-label="Torna alla home" title="Torna alla home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-left preview-icon">
+                <path d="m12 19-7-7 7-7" />
+                <path d="M19 12H5" />
+            </svg>
+        </a>
+
+        <video id="player"></video>
+
+        <div class="video-controls">
+            <input type="range" id="seek-bar" value="0" min="0" max="100" step="0.1">
+
+            <div class="controls-row">
+                <div class="left-controls">
+                    <button id="play-btn">▶</button>
+                    <span id="time-display">0:00 / 0:00</span>
+                </div>
+
+                <div class="right-controls">
+                    <div class="quality-control">
+                        <button id="quality-btn" type="button" aria-label="Qualità video" title="Qualità video"
+                            aria-haspopup="true" aria-expanded="false" aria-controls="quality-menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-settings preview-icon">
+                                <path
+                                    d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                        <div id="quality-menu" class="quality-menu" aria-label="Seleziona qualità" hidden>
+                            <button class="q-btn" type="button" data-quality="1080" aria-pressed="false">1080p HD</button>
+                            <button class="q-btn" type="button" data-quality="720" aria-pressed="false">720p</button>
+                            <button class="q-btn" type="button" data-quality="480" aria-pressed="false">480p</button>
+                            <button class="q-btn" type="button" data-quality="360" aria-pressed="false">360p</button>
+                        </div>
+                    </div>
+                    <button id="fs-btn" type="button" aria-label="Schermo intero" title="Schermo intero">⛶</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

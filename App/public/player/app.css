@@ -1,0 +1,191 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-home {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 10;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.back-home:hover {
+    background: rgba(229, 9, 20, 0.9);
+}
+
+#video-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    flex: 0 0 100%;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+}
+
+#player {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Barra dei controlli */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    padding: 15px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+/* Timeline seeker */
+#seek-bar {
+    width: 100%;
+    height: 5px;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+#seek-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #e50914;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-controls, .right-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quality-control {
+    position: relative;
+}
+
+.quality-menu {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    min-width: 100px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    background: rgba(20, 20, 20, 0.96);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.quality-menu[hidden] {
+    display: none;
+}
+
+.quality-menu .q-btn {
+    width: 100%;
+    border: 0;
+    text-align: left;
+    font-size: 13px;
+}
+
+.quality-menu .q-btn.active {
+    color: #fff;
+    background: #e50914;
+}
+
+button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+#play-btn {
+    font-size: 16px;
+}
+
+.quality-selector {
+    display: flex;
+    gap: 5px;
+}
+
+.q-btn {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+}
+
+.q-btn.active {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+#time-display {
+    font-family: monospace;
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* Stile Fullscreen */
+#video-container:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    justify-content: center;
+}
+
+#video-container:fullscreen #player {
+    max-height: 100vh;
+    object-fit: contain;
+}

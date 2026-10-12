@@ -1,0 +1,128 @@
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #141414;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    user-select: none;
+    
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e50914;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.nav-user {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Catalogo */
+.catalog-container {
+    padding: 100px 40px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.catalog-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Card del singolo film */
+.movie-card {
+    display: flex;
+    align-items: center;
+    background: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.movie-card:hover {
+    transform: scale(1.02);
+    background: #2a2a2a;
+    border-color: rgba(229, 9, 20, 0.4);
+}
+
+/* Immagine a sinistra */
+.movie-thumbnail {
+    width: 220px;
+    height: 125px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Informazioni a destra */
+.movie-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.movie-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.movie-age {
+    background: #333;
+    border: 1px solid #555;
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 3px;
+    color: #ddd;
+    font-family: monospace;
+}
+
+.movie-description {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+    line-height: 1.4;
+}
